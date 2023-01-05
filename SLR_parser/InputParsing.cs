@@ -37,7 +37,7 @@ namespace SLR_parser {
             InputTape.Add("$");
 
             // Add $0 to stack
-            ParsingStack.Add("$0");
+            ParsingStack.Add("$_0");
             
             //for(int i = 0; i<Table.Count; i++) {
             //    for(int j = 0; j<Table.Max(l => l.Count); j++) {
@@ -62,11 +62,12 @@ namespace SLR_parser {
 
                 String stackTop = ParsingStack[ParsingStack.Count - 1];
                 String inputTop = InputTape[0];
-                String TableLookup = Table[int.Parse(stackTop[1].ToString())][cols.IndexOf(inputTop)];
+                Console.WriteLine(cols.IndexOf(inputTop));
+                String TableLookup = Table[int.Parse(stackTop.Split('_')[1].ToString())][cols.IndexOf(inputTop)];
 
                 if (TableLookup.Contains("S")) { // If Shift Rule Exists
                     InputTape.RemoveAt(0);
-                    ParsingStack.Add(inputTop+TableLookup[1]);
+                    ParsingStack.Add(inputTop+"_"+TableLookup[1]);
                     //Console.WriteLine("ACTION: SHIFT-"+ TableLookup[1]);
                     Action = "SHIFT-"+ TableLookup[1];
                 }
@@ -84,9 +85,9 @@ namespace SLR_parser {
                     }
                     //Console.WriteLine(int.Parse(ParsingStack[ParsingStack.Count - 1][1].ToString()));
                     //Console.WriteLine(cols.IndexOf(numbered_rules[int.Parse(TableLookup[1].ToString())][0][0]));
-                    String num = Table[int.Parse(ParsingStack[ParsingStack.Count - 1][1].ToString())][cols.IndexOf(numbered_rules[int.Parse(TableLookup[1].ToString())][0][0])];
+                    String num = Table[int.Parse(ParsingStack[ParsingStack.Count - 1].Split('_')[1].ToString())][cols.IndexOf(numbered_rules[int.Parse(TableLookup[1].ToString())][0][0])];
                     
-                    ParsingStack.Add((numbered_rules[int.Parse(TableLookup[1].ToString())][0][0]).ToString()+num);
+                    ParsingStack.Add((numbered_rules[int.Parse(TableLookup[1].ToString())][0][0]).ToString()+"_"+num);
                     Action = "REDUCE " + numbered_rules[int.Parse(TableLookup[1].ToString())][0][0] + " -> "+String.Join(" ", numbered_rules[int.Parse(TableLookup[1].ToString())][1]);
                 }
 

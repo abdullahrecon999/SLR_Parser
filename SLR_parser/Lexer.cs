@@ -11,7 +11,7 @@ namespace SLR_parser
     class Lexer
     {
 
-
+        public string test;
         public Dictionary<string, Regex> dict = new Dictionary<string, Regex>();
         public List<List<string>> tokens = new List<List<string>>();
         public List<string> parsedInput = new List<string>();
