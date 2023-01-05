@@ -10,7 +10,7 @@ namespace SLR_parser {
 
         public IDictionary<String, List<List<String>>> Rules = new Dictionary<String, List<List<String>>>();
         private Regex regex = new Regex(@"^[a-z.(),\[\]0-9$#*;+-/]$");
-        private Regex regexNonTerm = new Regex(@"^[A-Z]$");
+        private Regex regexNonTerm = new Regex(@"^[A-Z]+$");
         public List<string> nonterminals = new List<string>();
         public List<string> terminals = new List<string>();
         public String Start_symbol;
@@ -21,7 +21,8 @@ namespace SLR_parser {
 
             List<string> g0 = grammar.Split('\n').ToList();
             List<string> g1 = new List<string>();
-            Start_symbol = g0[0].ElementAt(0).ToString();
+            Start_symbol = Regex.Split(g0[0], "->")[0];
+            Start_symbol = Start_symbol.Split(' ')[0];
             nonterminals.Add(Start_symbol+"'");
             nonterminals.Add(Start_symbol);
 
@@ -38,13 +39,13 @@ namespace SLR_parser {
 
                 if (a.Contains(" | ")) {
                     g1.Add(Regex.Split(a, "\\|")[0].ToString());
-                    //Console.WriteLine("g1 here: " + Regex.Split(a, "\\|")[0].ToString());
+                    Console.WriteLine("g1 here: " + Regex.Split(a, "\\|")[0].ToString());
 
                     List<String> rules = Regex.Split(a, "\\|").ToList();
 
                     for (int i = 1; i < rules.Count; i++) {
-                        g1.Add(Regex.Split(a, "\\|")[0][0].ToString() + " ->" + rules[i]);
-                        //Console.WriteLine("g1 here2: " + Regex.Split(a, " | ")[0][0].ToString() + " ->" + rules[i]);
+                        g1.Add(Regex.Split(a, "->")[0].ToString() + "->" + rules[i]);
+                        Console.WriteLine("g1 here2: " + Regex.Split(a, " | ")[0][0].ToString() + " ->" + rules[i]);
                     }
                 } else {
                     g1.Add(a);
@@ -53,13 +54,22 @@ namespace SLR_parser {
 
             foreach(var rul in g1) {
                 String prod = Regex.Split(rul, "->")[1];
+                Console.WriteLine("PRODD::: ");
+
                 String nonterm = Regex.Replace(Regex.Split(rul, "->")[0], @"\s+", "");
 
                 if (Rules.ContainsKey(nonterm)) {
-                    Rules[nonterm].Add(Regex.Replace(prod, @"\s+", "").ToCharArray().Select(c => c.ToString()).ToList());
+                    //Rules[nonterm].Add(Regex.Replace(prod, @"\s+", "").ToCharArray().Select(c => c.ToString()).ToList());7
+                    List<String> ppro = prod.Split(' ').ToList();
+                    ppro.RemoveAll(s => s == "");
+                    Rules[nonterm].Add(ppro);
+
+                    //Console.WriteLine("Test HERE: ", Regex.Replace(prod, @"\s+", "").ToCharArray().Select(c => c.ToString()).ToList());
                 } else {
                     var val = new List<List<String>>();
-                    List<String> pro = Regex.Replace(prod, @"\s+", "").ToCharArray().Select(c => c.ToString()).ToList();
+                    //List<String> pro = Regex.Replace(prod, @"\s+", "").ToCharArray().Select(c => c.ToString()).ToList();
+                    List<String> pro = prod.Split(' ').ToList();
+                    pro.RemoveAll(s => s == "");
                     val.Add(pro);
                     Rules.Add(nonterm, val);
                 }
@@ -97,14 +107,14 @@ namespace SLR_parser {
                             return new Tuple<int, String>(-1, "[-] Remove Useless Symbol::AT:: " + b);
                         }
                     } else {
-                        if (regex.Match(b).Success)
-                            terminals.Add(b);
+                        terminals.Add(b);
                     }
                 }
 
             }
 
             terminals = terminals.Distinct().ToList();
+            terminals.RemoveAll(s => s == "");
             return new Tuple<int, String>(0, "[+] Success");
         }
         
