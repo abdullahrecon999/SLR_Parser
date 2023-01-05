@@ -25,23 +25,10 @@ namespace SLR_parser {
 
         private void button1_Click(object sender, EventArgs e) {
 
-             
-
-
             String grammar = InputBox.Text;
-            String input = InputString.Text;
 
-            Lexer lexer = new Lexer(input, grammar);
-
-
-            this.tokens = lexer.LexAnalysis();
-            this.renderTokens();
-
-            
-
-            /*
             Preprocessor preprocessor1 = new Preprocessor();
-            Tuple<int,String> output = preprocessor1.InitGrammar(grammar);
+            Tuple<int, String> output = preprocessor1.InitGrammar(grammar);
 
             if (output.Item1 == -1) {
                 ErrorBox.Text = output.Item2;
@@ -55,25 +42,25 @@ namespace SLR_parser {
 
             // Display first and follow in GUI
             foreach (var item in preprocessor1.FIRST_SET) {
-                String val = item.Key + " : { " + String.Join(", ", item.Value) + " } \n";
+                String val = item.Key + " : { " + String.Join(", ", item.Value) + " } \n\n";
                 FirstSetBox.Text = FirstSetBox.Text + val;
             }
 
             foreach (var item in preprocessor1.FOLLOW_SET) {
-                String val = item.Key + " : { " + String.Join(", ", item.Value) + " } \n";
+                String val = item.Key + " : { " + String.Join(", ", item.Value) + " } \n\n";
                 FollowSetBox.Text = FollowSetBox.Text + val;
             }
 
             dfa = new SLR_DFA(preprocessor1.Rules, preprocessor1.nonterminals, preprocessor1.Start_symbol);
 
             dfa.augmentGrammar(preprocessor1.Rules, preprocessor1.nonterminals, preprocessor1.Start_symbol);
-            dfa.statesDict[0] = new List<List<List<String>>>( dfa.findClosure(dfa.AugRules, dfa.AugRules[0][0][0]));
+            dfa.statesDict[0] = new List<List<List<String>>>(dfa.findClosure(dfa.AugRules, dfa.AugRules[0][0][0]));
             dfa.generateStates(dfa.statesDict);
             Table = dfa.createParseTable(dfa.statesDict, dfa.stateMap, preprocessor1.terminals, preprocessor1.nonterminals, preprocessor1.FOLLOW_SET);
 
             //// Display GOTO in GUI
             foreach (var item in dfa.stateMap) {
-                String val = "GOTO: ( I" + item.Key.Item1 + " , " + item.Key.Item2 + " ) = I" + item.Value + "\n";
+                String val = "GOTO: ( I" + item.Key.Item1 + " , " + item.Key.Item2 + " ) = I" + item.Value + "\n\n";
                 GotoBox.Text = GotoBox.Text + val;
             }
 
@@ -83,7 +70,7 @@ namespace SLR_parser {
                 DFABox.Text = DFABox.Text + "STATE I" + st.Key + ":\n";
                 foreach (var item in dfa.statesDict[st.Key]) {
                     //Console.WriteLine("  "+ String.Join(" ", item[0]) + " -> "+String.Join(" ",item[1]));
-                    if(!String.Join(" ", item[1]).Contains(".")) {
+                    if (!String.Join(" ", item[1]).Contains(".")) {
                         DFABox.Text = DFABox.Text + "  " + String.Join(" ", item[0]) + " -> " + String.Join(" ", item[1]) + " .\n";
                     } else {
                         DFABox.Text = DFABox.Text + "  " + String.Join(" ", item[0]) + " -> " + String.Join(" ", item[1]) + "\n";
@@ -92,7 +79,7 @@ namespace SLR_parser {
                 DFABox.Text = DFABox.Text + "\n-----------------------------\n";
             }
 
-            Ptable.ColumnCount = dfa.colss.Count+1;
+            Ptable.ColumnCount = dfa.colss.Count + 1;
             Ptable.AutoResizeColumns();
             Ptable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             int i = 1;
@@ -113,9 +100,8 @@ namespace SLR_parser {
             //Console.WriteLine(dfa.numbered_rules);
 
             foreach (var x in dfa.numbered_rules) {
-                NumberedBox.Text = NumberedBox.Text + x.Key + ": " + String.Join(" ",x.Value[0])+" -> " + String.Join(" ", x.Value[1])+"\n";
+                NumberedBox.Text = NumberedBox.Text + x.Key + ": " + String.Join(" ", x.Value[0]) + " -> " + String.Join(" ", x.Value[1]) + "\n";
             }
-            */
 
         }
 
@@ -137,6 +123,7 @@ namespace SLR_parser {
             ParsingBox.Columns.Clear();
             ParsingBox.Rows.Clear();
             InputString.Clear();
+            tokenGridView.Rows.Clear();
         }
 
         private void Ptable_CellContentClick(object sender, DataGridViewCellEventArgs e) {
@@ -144,6 +131,14 @@ namespace SLR_parser {
         }
 
         private void ParseButton_Click(object sender, EventArgs e) {
+            
+            String grammar = InputBox.Text;
+            String input = InputString.Text;
+
+            Lexer lexer = new Lexer(input, grammar);
+
+            this.tokens = lexer.LexAnalysis();
+            this.renderTokens();
 
             ParsingBox.Columns.Clear();
             ParsingBox.Rows.Clear();

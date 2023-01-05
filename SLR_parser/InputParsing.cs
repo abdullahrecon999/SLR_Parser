@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace SLR_parser {
@@ -32,6 +33,7 @@ namespace SLR_parser {
             //InputTape.Add("((a),a,(a,a))".ToCharArray().Select(c => c.ToString()));
 
             foreach (var a in Input.ToCharArray()) {
+                if(a != ' ')
                 InputTape.Add(a.ToString());
             }
             InputTape.Add("$");
@@ -67,28 +69,31 @@ namespace SLR_parser {
 
                 if (TableLookup.Contains("S")) { // If Shift Rule Exists
                     InputTape.RemoveAt(0);
-                    ParsingStack.Add(inputTop+"_"+TableLookup[1]);
+                    ParsingStack.Add(inputTop+"_"+ int.Parse(Regex.Match(TableLookup.ToString(), @"\d+").Value));
                     //Console.WriteLine("ACTION: SHIFT-"+ TableLookup[1]);
-                    Action = "SHIFT-"+ TableLookup[1];
+                    Action = "SHIFT-"+ int.Parse(Regex.Match(TableLookup.ToString(), @"\d+").Value);
                 }
 
                 else if (TableLookup.Contains("R")) { // If Reduce Rule Exists
                     //Console.WriteLine("R: "+ TableLookup[1]);
                     //Console.WriteLine(numbered_rules[TableLookup[1]][0] + " -> "+String.Join("", numbered_rules[TableLookup[1]][1]));
-                    //Console.WriteLine(numbered_rules[int.Parse(TableLookup[1].ToString())][0]);
-                    //Console.WriteLine(numbered_rules[int.Parse(TableLookup[1].ToString())][1].Count);
+                    Console.WriteLine(numbered_rules[int.Parse(TableLookup[1].ToString())][0]);
+                    Console.WriteLine(numbered_rules[int.Parse(TableLookup[1].ToString())][1]);
+                    String test = String.Join(",", numbered_rules[int.Parse(TableLookup[1].ToString())][1]);
+                    int cou = int.Parse(Regex.Match(TableLookup.ToString(), @"\d+").Value);
+                    Console.WriteLine(numbered_rules[cou][1].Count);
 
-                    int pops = numbered_rules[int.Parse(TableLookup[1].ToString())][1].Count;
+                    int pops = numbered_rules[cou][1].Count;
 
                     for(int pop = 0; pop < pops; pop++) {
                         ParsingStack.RemoveAt(ParsingStack.Count - 1);
                     }
                     //Console.WriteLine(int.Parse(ParsingStack[ParsingStack.Count - 1][1].ToString()));
                     //Console.WriteLine(cols.IndexOf(numbered_rules[int.Parse(TableLookup[1].ToString())][0][0]));
-                    String num = Table[int.Parse(ParsingStack[ParsingStack.Count - 1].Split('_')[1].ToString())][cols.IndexOf(numbered_rules[int.Parse(TableLookup[1].ToString())][0][0])];
+                    String num = Table[int.Parse(ParsingStack[ParsingStack.Count - 1].Split('_')[1].ToString())][cols.IndexOf(numbered_rules[cou][0][0])];
                     
-                    ParsingStack.Add((numbered_rules[int.Parse(TableLookup[1].ToString())][0][0]).ToString()+"_"+num);
-                    Action = "REDUCE " + numbered_rules[int.Parse(TableLookup[1].ToString())][0][0] + " -> "+String.Join(" ", numbered_rules[int.Parse(TableLookup[1].ToString())][1]);
+                    ParsingStack.Add((numbered_rules[cou][0][0]).ToString()+"_"+num);
+                    Action = "REDUCE " + numbered_rules[cou][0][0] + " -> "+String.Join(" ", numbered_rules[cou][1]);
                 }
 
                 else if (TableLookup.Contains("Accept")) { // Accepting at $ in input
