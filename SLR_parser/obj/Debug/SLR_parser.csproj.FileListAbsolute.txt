@@ -1,0 +1,41 @@
+C:\Users\Administrator\source\repos\SLR_parser\SLR_parser\bin\Debug\SLR_parser.exe.config
+C:\Users\Administrator\source\repos\SLR_parser\SLR_parser\bin\Debug\SLR_parser.exe
+C:\Users\Administrator\source\repos\SLR_parser\SLR_parser\bin\Debug\SLR_parser.pdb
+C:\Users\Administrator\source\repos\SLR_parser\SLR_parser\obj\Debug\SLR_parser.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\SLR_parser\SLR_parser\obj\Debug\SLR_parser.Form1.resources
+C:\Users\Administrator\source\repos\SLR_parser\SLR_parser\obj\Debug\SLR_parser.Properties.Resources.resources
+C:\Users\Administrator\source\repos\SLR_parser\SLR_parser\obj\Debug\SLR_parser.csproj.GenerateResource.cache
+C:\Users\Administrator\source\repos\SLR_parser\SLR_parser\obj\Debug\SLR_parser.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\SLR_parser\SLR_parser\obj\Debug\SLR_parser.exe
+C:\Users\Administrator\source\repos\SLR_parser\SLR_parser\obj\Debug\SLR_parser.pdb
+D:\University\7th semester\CC\Labs\SLR_parser\SLR_parser\bin\Debug\SLR_parser.exe.config
+D:\University\7th semester\CC\Labs\SLR_parser\SLR_parser\bin\Debug\SLR_parser.exe
+D:\University\7th semester\CC\Labs\SLR_parser\SLR_parser\bin\Debug\SLR_parser.pdb
+D:\University\7th semester\CC\Labs\SLR_parser\SLR_parser\obj\Debug\SLR_parser.csproj.AssemblyReference.cache
+D:\University\7th semester\CC\Labs\SLR_parser\SLR_parser\obj\Debug\SLR_parser.Form1.resources
+D:\University\7th semester\CC\Labs\SLR_parser\SLR_parser\obj\Debug\SLR_parser.Properties.Resources.resources
+D:\University\7th semester\CC\Labs\SLR_parser\SLR_parser\obj\Debug\SLR_parser.csproj.GenerateResource.cache
+D:\University\7th semester\CC\Labs\SLR_parser\SLR_parser\obj\Debug\SLR_parser.csproj.CoreCompileInputs.cache
+D:\University\7th semester\CC\Labs\SLR_parser\SLR_parser\obj\Debug\SLR_parser.exe
+D:\University\7th semester\CC\Labs\SLR_parser\SLR_parser\obj\Debug\SLR_parser.pdb
+C:\Users\comsats\Desktop\SLR_parser\SLR_parser\bin\Debug\SLR_parser.exe.config
+C:\Users\comsats\Desktop\SLR_parser\SLR_parser\bin\Debug\SLR_parser.exe
+C:\Users\comsats\Desktop\SLR_parser\SLR_parser\bin\Debug\SLR_parser.pdb
+C:\Users\comsats\Desktop\SLR_parser\SLR_parser\obj\Debug\SLR_parser.csproj.AssemblyReference.cache
+C:\Users\comsats\Desktop\SLR_parser\SLR_parser\obj\Debug\SLR_parser.csproj.SuggestedBindingRedirects.cache
+C:\Users\comsats\Desktop\SLR_parser\SLR_parser\obj\Debug\SLR_parser.Form1.resources
+C:\Users\comsats\Desktop\SLR_parser\SLR_parser\obj\Debug\SLR_parser.Properties.Resources.resources
+C:\Users\comsats\Desktop\SLR_parser\SLR_parser\obj\Debug\SLR_parser.csproj.GenerateResource.cache
+C:\Users\comsats\Desktop\SLR_parser\SLR_parser\obj\Debug\SLR_parser.csproj.CoreCompileInputs.cache
+C:\Users\comsats\Desktop\SLR_parser\SLR_parser\obj\Debug\SLR_parser.exe
+C:\Users\comsats\Desktop\SLR_parser\SLR_parser\obj\Debug\SLR_parser.pdb
+C:\Users\Administrator\Downloads\SLR_parser (2)\SLR_parser\SLR_parser\bin\Debug\SLR_parser.exe.config
+C:\Users\Administrator\Downloads\SLR_parser (2)\SLR_parser\SLR_parser\bin\Debug\SLR_parser.exe
+C:\Users\Administrator\Downloads\SLR_parser (2)\SLR_parser\SLR_parser\bin\Debug\SLR_parser.pdb
+C:\Users\Administrator\Downloads\SLR_parser (2)\SLR_parser\SLR_parser\obj\Debug\SLR_parser.csproj.AssemblyReference.cache
+C:\Users\Administrator\Downloads\SLR_parser (2)\SLR_parser\SLR_parser\obj\Debug\SLR_parser.Form1.resources
+C:\Users\Administrator\Downloads\SLR_parser (2)\SLR_parser\SLR_parser\obj\Debug\SLR_parser.Properties.Resources.resources
+C:\Users\Administrator\Downloads\SLR_parser (2)\SLR_parser\SLR_parser\obj\Debug\SLR_parser.csproj.GenerateResource.cache
+C:\Users\Administrator\Downloads\SLR_parser (2)\SLR_parser\SLR_parser\obj\Debug\SLR_parser.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Downloads\SLR_parser (2)\SLR_parser\SLR_parser\obj\Debug\SLR_parser.exe
+C:\Users\Administrator\Downloads\SLR_parser (2)\SLR_parser\SLR_parser\obj\Debug\SLR_parser.pdb
