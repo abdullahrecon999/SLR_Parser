@@ -16,6 +16,8 @@ namespace SLR_parser {
         public List<List<string>> tokens = new List<List<string>>();
         public SLR_DFA dfa;
 
+    public string test;
+
         public Form1() {
             InitializeComponent();
         }
