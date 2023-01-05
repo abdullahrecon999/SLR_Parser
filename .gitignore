@@ -3,7 +3,7 @@
 ./obj/Debug
 /SLR_parser/obj/Debug
 /SLR_parser/obj/Debug
-./SLR_parser/obj
+./SLR_parser/obj/
 /SLR_parser.csproj.AssemblyReference.cache
 
 /build/
