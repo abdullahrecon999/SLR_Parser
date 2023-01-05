@@ -13,19 +13,31 @@ namespace SLR_parser {
     public partial class Form1 : Form {
 
         public List<List<String>> Table = new List<List<string>>();
+        public List<List<string>> tokens = new List<List<string>>();
         public SLR_DFA dfa;
 
         public Form1() {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e) {
-
-        }
 
         private void button1_Click(object sender, EventArgs e) {
-            String grammar = InputBox.Text;
 
+             
+
+
+            String grammar = InputBox.Text;
+            String input = InputString.Text;
+
+            Lexer lexer = new Lexer(input, grammar);
+
+
+            this.tokens = lexer.LexAnalysis();
+            this.renderTokens();
+
+            
+
+            /*
             Preprocessor preprocessor1 = new Preprocessor();
             Tuple<int,String> output = preprocessor1.InitGrammar(grammar);
 
@@ -101,6 +113,7 @@ namespace SLR_parser {
             foreach (var x in dfa.numbered_rules) {
                 NumberedBox.Text = NumberedBox.Text + x.Key + ": " + String.Join(" ",x.Value[0])+" -> " + String.Join(" ", x.Value[1])+"\n";
             }
+            */
 
         }
 
@@ -148,5 +161,29 @@ namespace SLR_parser {
                 ParsingBox.Rows.Add(x.ToArray());
             }
         }
+
+        private void renderTokens()
+        {
+
+
+            tokenGridView.Columns.Clear();
+            tokenGridView.Rows.Clear();
+
+
+            tokenGridView.ColumnCount = 2;
+            tokenGridView.AutoResizeColumns();
+            tokenGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+
+            tokenGridView.Columns[0].Name = "TYPE";
+            tokenGridView.Columns[1].Name = "VALUE";
+
+            foreach(var x in tokens)
+            {
+                tokenGridView.Rows.Add(x.ToArray());
+            }
+        }
+
+        
     }
 }

@@ -39,3 +39,13 @@ C:\Users\Administrator\Downloads\SLR_parser (2)\SLR_parser\SLR_parser\obj\Debug\
 C:\Users\Administrator\Downloads\SLR_parser (2)\SLR_parser\SLR_parser\obj\Debug\SLR_parser.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Downloads\SLR_parser (2)\SLR_parser\SLR_parser\obj\Debug\SLR_parser.exe
 C:\Users\Administrator\Downloads\SLR_parser (2)\SLR_parser\SLR_parser\obj\Debug\SLR_parser.pdb
+D:\University\7th semester\CC\lab-term\SLR_Parser\SLR_parser\bin\Debug\SLR_parser.exe.config
+D:\University\7th semester\CC\lab-term\SLR_Parser\SLR_parser\bin\Debug\SLR_parser.exe
+D:\University\7th semester\CC\lab-term\SLR_Parser\SLR_parser\bin\Debug\SLR_parser.pdb
+D:\University\7th semester\CC\lab-term\SLR_Parser\SLR_parser\obj\Debug\SLR_parser.csproj.AssemblyReference.cache
+D:\University\7th semester\CC\lab-term\SLR_Parser\SLR_parser\obj\Debug\SLR_parser.Form1.resources
+D:\University\7th semester\CC\lab-term\SLR_Parser\SLR_parser\obj\Debug\SLR_parser.Properties.Resources.resources
+D:\University\7th semester\CC\lab-term\SLR_Parser\SLR_parser\obj\Debug\SLR_parser.csproj.GenerateResource.cache
+D:\University\7th semester\CC\lab-term\SLR_Parser\SLR_parser\obj\Debug\SLR_parser.csproj.CoreCompileInputs.cache
+D:\University\7th semester\CC\lab-term\SLR_Parser\SLR_parser\obj\Debug\SLR_parser.exe
+D:\University\7th semester\CC\lab-term\SLR_Parser\SLR_parser\obj\Debug\SLR_parser.pdb

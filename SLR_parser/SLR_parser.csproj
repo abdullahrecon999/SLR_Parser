@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Lexer.cs" />
     <Compile Include="InputParsing.cs" />
     <Compile Include="Preprocess.cs" />
     <Compile Include="Form1.cs">
