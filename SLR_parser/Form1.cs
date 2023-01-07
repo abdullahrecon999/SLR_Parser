@@ -105,9 +105,6 @@ namespace SLR_parser {
 
         }
 
-        private void groupBox3_Enter(object sender, EventArgs e) {
-
-        }
 
         private void ClearAll_Click(object sender, EventArgs e) {
             InputBox.Clear();

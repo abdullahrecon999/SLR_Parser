@@ -48,6 +48,11 @@ namespace SLR_parser {
             this.ParsingBox = new System.Windows.Forms.DataGridView();
             this.tokenGridView = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.semanticText1 = new System.Windows.Forms.RichTextBox();
+            this.semanticText2 = new System.Windows.Forms.RichTextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -60,6 +65,8 @@ namespace SLR_parser {
             ((System.ComponentModel.ISupportInitialize)(this.ParsingBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tokenGridView)).BeginInit();
             this.groupBox5.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // InputBox
@@ -139,7 +146,6 @@ namespace SLR_parser {
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DFA";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // DFABox
             // 
@@ -215,7 +221,9 @@ namespace SLR_parser {
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(829, 17);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(1229, 21);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(437, 442);
@@ -310,6 +318,54 @@ namespace SLR_parser {
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Tokens";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.semanticText2);
+            this.tabPage3.Controls.Add(this.groupBox8);
+            this.tabPage3.Controls.Add(this.groupBox7);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(575, 515);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Semantic Analyzer";
+            // 
+            // semanticText1
+            // 
+            this.semanticText1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.semanticText1.Location = new System.Drawing.Point(11, 18);
+            this.semanticText1.Name = "semanticText1";
+            this.semanticText1.Size = new System.Drawing.Size(251, 472);
+            this.semanticText1.TabIndex = 0;
+            this.semanticText1.Text = "";
+            // 
+            // semanticText2
+            // 
+            this.semanticText2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.semanticText2.Location = new System.Drawing.Point(310, 31);
+            this.semanticText2.Name = "semanticText2";
+            this.semanticText2.Size = new System.Drawing.Size(247, 472);
+            this.semanticText2.TabIndex = 1;
+            this.semanticText2.Text = "";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.semanticText1);
+            this.groupBox7.Location = new System.Drawing.Point(3, 13);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(276, 499);
+            this.groupBox7.TabIndex = 2;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Grammar";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Location = new System.Drawing.Point(296, 13);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(276, 499);
+            this.groupBox8.TabIndex = 3;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Semantic Rules";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,6 +396,8 @@ namespace SLR_parser {
             ((System.ComponentModel.ISupportInitialize)(this.ParsingBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tokenGridView)).EndInit();
             this.groupBox5.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -370,6 +428,11 @@ namespace SLR_parser {
         private System.Windows.Forms.Button ParseButton;
         private System.Windows.Forms.DataGridView tokenGridView;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.RichTextBox semanticText2;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.RichTextBox semanticText1;
     }
 }
 
