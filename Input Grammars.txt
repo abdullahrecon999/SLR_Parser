@@ -1,0 +1,4 @@
+EXP -> EXP + TERM | EXP - TERM | TERM
+TERM -> TERM * FACTOR | FACTOR
+FACTOR -> ( EXP ) | NUM
+NUM -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9

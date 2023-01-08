@@ -154,12 +154,29 @@ namespace SLR_parser {
             foreach (var x in outputTrace) {
                 ParsingBox.Rows.Add(x.ToArray());
             }
+
+            // Generate Annotated Parse Tree
+            SemanticAnalyzer SDT = new SemanticAnalyzer(InputString.Text, "");
+            semanticText2.Text = SDT.generateAnnotatedPTree();
+
+            // Generate Syntax Tree
+            MainSyntaxTree MST = new MainSyntaxTree();
+            String expr = MST.InfixToPostfix(InputString.Text);
+            Console.WriteLine(expr.ToString());
+            String[] arrPostfix = expr.Split(' ');
+
+            //MST.PrintSyntaxTree(MST.GenerateSyntaxTree(arrPostfix));
+            String tree = MST.GenerateSyntaxTree(arrPostfix);
+            syntaxTreeBox.Text = tree;
+
+            //Generate 3 addr code
+            ThreeAddrCode IR = new ThreeAddrCode();
+            String code = IR.GenerateCode(MST.getRoot(arrPostfix));
+            Console.WriteLine(code);
+            IRbox.Text = code;
         }
 
-        private void renderTokens()
-        {
-
-
+        private void renderTokens() {
             tokenGridView.Columns.Clear();
             tokenGridView.Rows.Clear();
 
@@ -178,6 +195,12 @@ namespace SLR_parser {
             }
         }
 
-        
+        private void tabPage3_Click(object sender, EventArgs e) {
+
+        }
+
+        private void groupBox7_Enter(object sender, EventArgs e) {
+
+        }
     }
 }

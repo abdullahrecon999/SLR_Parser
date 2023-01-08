@@ -7,10 +7,39 @@ using System.Threading.Tasks;
 
 namespace SLR_parser
 {
+    class Rules {
+
+        private static string rule;
+        private static string semantics;
+
+        public static string getRule() {
+            rule = "" + "1) exp -> exp + term\n" +
+                        "2) exp -> exp - term\n" +
+                        "3) exp -> term\n" +
+                        "4) term -> term * factor\n" +
+                        "5) term -> factor\n" +
+                        "6) factor -> ( exp )\n" +
+                        "7) factor -> number";
+
+            return rule;
+        }
+
+        public static string getSemantics() {
+            semantics = "" + "1) exp1.val = exp2.val + term.val\n" +
+                        "2) exp1.val = exp2.val - term.val\n" +
+                        "3) exp.val = term.val\n" +
+                        "4) term1.val = term2.val*factor.val\n" +
+                        "5) term.val = factor.val\n" +
+                        "6) factor.val = exp.val\n" +
+                        "7) factor.val = number.val";
+
+            return semantics;
+        }
+    }
+
     class SemanticAnalyzer
     {
-
-   
+ 
         string parseTree;
         string rules;
         string output;
@@ -20,7 +49,6 @@ namespace SLR_parser
             this.parseTree = parseTree;
             this.rules = rules;
         }
-
 
         public string performSDD()
         {
@@ -49,10 +77,10 @@ namespace SLR_parser
             return Rules.getSemantics();
     }
 
-
         public string generateAnnotatedPTree()
         {
             string trimmedParseTree = parseTree.Trim();
+            trimmedParseTree = trimmedParseTree.Replace(" ", "");
             char[] chars = trimmedParseTree.ToCharArray();
             List<NonTerminal> list = new List<NonTerminal>();
             string state = "exp";
@@ -185,13 +213,8 @@ namespace SLR_parser
             }
             return root;
         }
-
-
-
     }
 }
-
-
 
 public struct NonTerminal
 {
